@@ -1,15 +1,16 @@
 function SliderContent({ activeindex, sliderImage}: {activeindex: number, sliderImage: {image: string, title: string}[]}) {
+    const sliderImageWidth = '50%';
     return (
         <div className="w-full h-full overflow-hidden relative">
             <div 
-                className="flex gap-2.5 h-full transition-transform duration-500 ease-in-out"
+                className="flex gap-20 h-full transition-transform duration-500 ease-in-out"
                 style={{ 
-                    transform: `translateX(calc(10% - ${activeindex * 75}%))`,
+                    transform: `translateX(calc(30% - ${activeindex * parseInt(sliderImageWidth.replace('%', ''))}%))`,
                 }}>
                 {
                     sliderImage.map((slide, index) => (
-                        <div key={index} className="h-full flex-shrink-0" style={{ width: '65%' }}>
-                            <img src={slide.image} alt={slide.title} className="w-full h-full object-contain" />
+                        <div key={index} className="h-full flex-shrink-0" style={{ width: sliderImageWidth }}>
+                            <img src={slide.image} alt={slide.title} className="w-full h-full object-fit" />
                         </div>
                     ))
                 }

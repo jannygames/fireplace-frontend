@@ -18,6 +18,8 @@ function Slider({className}: {className: string}) {
     }, [activeindex]);
 
     return (
+        <>
+        <Dots activeindex={activeindex} onClick={(activeindex) => setActiveIndex(activeindex)} sliderImage={sliderImage} />
         <div className={`relative w-full h-1/2 ${className}`}>
             <SliderContent activeindex={activeindex} sliderImage={sliderImage} />
             <Arrows prevSlide={
@@ -29,8 +31,9 @@ function Slider({className}: {className: string}) {
                     setActiveIndex(activeindex === len ? 0 : activeindex + 1);
                 }
             } />
-            <Dots activeindex={activeindex} onClick={(activeindex) => setActiveIndex(activeindex)} sliderImage={sliderImage} />
+            
         </div>
+        </>
     );
 }
 
