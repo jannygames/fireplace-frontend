@@ -1,5 +1,5 @@
-import Slider from "../slider/Slider";
-import Card from "../card/Card";
+import Slider from "../../components/slider/Slider";
+import Card from "../../components/card/Card";
 
 const Hero = () => {
   return (
