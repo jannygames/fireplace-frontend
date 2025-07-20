@@ -3,7 +3,7 @@ function SliderContent({ activeindex, sliderImage}: {activeindex: number, slider
     return (
         <div className="w-full h-full overflow-hidden relative">
             <div 
-                className="flex gap-20 h-full transition-transform duration-500 ease-in-out"
+                className="flex gap-15 h-full transition-transform duration-500 ease-in-out"
                 style={{ 
                     transform: `translateX(calc(30% - ${activeindex * parseInt(sliderImageWidth.replace('%', ''))}%))`,
                 }}>
